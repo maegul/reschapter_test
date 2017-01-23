@@ -1,0 +1,77 @@
+<head>
+
+	<!-- Settings that affect the whole page go here -->
+
+<style>
+
+	p, #my_plot, h1 {
+		width: 50%;  /*   */
+		margin: auto;
+		margin-bottom: 20px;
+	}
+
+
+/*	body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+*/
+/*	* {
+		margin: auto;
+	}
+*/
+</style>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type='text/javascript' src="https://rawgit.com/maegul/ResChapter/master/page_data.js"></script>
+
+</head>
+
+
+<body>
+
+	<h1>My First Page</h1>
+
+	<p class='my_text'>
+		This is my web page. There are many like it, but this one is mine.
+	</p>
+
+	<p class='my_text'>
+		My web page is my best friend. It is my life. I must master it as I must master my life.
+		Without me, my web page is useless. Without my web page, I am useless.
+	</p>
+
+	<p class='my_text'>
+		<em>This is emphasised</em>
+		<code>This is code?</code>
+
+	</p>
+
+
+
+	<div id="my_plot"></div>
+
+	<script type="text/javascript">
+
+	console.log(data);
+
+	trace1 = {x: data.rand.x, y: data.rand.y, mode:'markers', type:'scatter', marker: {color: 'Orange', size: 18, line:{color: 'rgb(50, 3, 180)', width: 2}}};
+
+	traces = [trace1];
+
+	Plotly.newPlot(my_plot, traces)
+
+
+	// Plotly.newPlot(my_plot, [{"x":data.rand.x, "y": data.rand.y, "type": "scatter", "mode": "markers"}])
+
+
+
+	window.onresize = function(){
+		Plotly.Plots.resize(my_plot);
+	}
+
+
+	</script>
+
+</body>
